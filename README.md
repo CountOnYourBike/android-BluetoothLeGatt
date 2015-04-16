@@ -4,6 +4,8 @@ Android BluetoothLeGatt Sample
 This sample demonstrates how to use the Bluetooth LE Generic Attribute Profile (GATT)
 to transmit arbitrary data between devices.
 
+Modified: To decode a larger sample of the GATT atributes
+
 Introduction
 ------------
 
