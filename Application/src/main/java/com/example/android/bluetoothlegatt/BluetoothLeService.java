@@ -1,4 +1,7 @@
 /*
+ * Decode: Battery Level
+ * Modified: Andrew J Roberts, 2015-04-15
+ *
  * Copyright (C) 2013 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -63,8 +66,10 @@ public class BluetoothLeService extends Service {
     public final static String EXTRA_DATA =
             "com.example.bluetooth.le.EXTRA_DATA";
 
-    public final static UUID UUID_HEART_RATE_MEASUREMENT =
+    public final static UUID  UUID_HEART_RATE_MEASUREMENT =
             UUID.fromString(SampleGattAttributes.HEART_RATE_MEASUREMENT);
+    public final static UUID UUID_BATTERY_LEVEL =
+            UUID.fromString(SampleGattAttributes.BATTERY_LEVEL);
 
     // Implements callback methods for GATT events that the app cares about.  For example,
     // connection change and services discovered.
@@ -146,6 +151,10 @@ public class BluetoothLeService extends Service {
                 final StringBuilder stringBuilder = new StringBuilder(data.length);
                 for(byte byteChar : data)
                     stringBuilder.append(String.format("%02X ", byteChar));
+                if (UUID_BATTERY_LEVEL.equals(characteristic.getUuid())) {
+                    final int batteryPct = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0);
+                    stringBuilder.append(" (").append(String.valueOf(batteryPct)).append("%)");
+                }
                 intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
             }
         }
