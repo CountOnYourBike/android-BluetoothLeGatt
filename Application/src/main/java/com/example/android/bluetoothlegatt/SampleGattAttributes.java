@@ -277,6 +277,7 @@ public class SampleGattAttributes {
         deviceManufacturer.put(118,"Creative Technology Ltd.");
         deviceManufacturer.put(120,"Nike, Inc.");
         deviceManufacturer.put(138,"Jawbone");
+        deviceManufacturer.put(158,"Bose Corporation");
         deviceManufacturer.put(195,"adidas AG");
         deviceManufacturer.put(196,"​​LG Electronics​");
         deviceManufacturer.put(204,"Beats Electronics");
