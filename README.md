@@ -1,10 +1,9 @@
+
 Android BluetoothLeGatt Sample
 ===================================
 
 This sample demonstrates how to use the Bluetooth LE Generic Attribute Profile (GATT)
 to transmit arbitrary data between devices.
-
-Modified: To decode a larger sample of the GATT atributes
 
 Introduction
 ------------
@@ -24,8 +23,8 @@ The Activities communicate with the Service, which in turn interacts with the [B
 Pre-requisites
 --------------
 
-- Android SDK v21
-- Android Build Tools v21.1.2
+- Android SDK 27
+- Android Build Tools v27.0.2
 - Android Support Repository
 
 Screenshots
@@ -54,7 +53,7 @@ submitting a pull request through GitHub. Please see CONTRIBUTING.md for more de
 License
 -------
 
-Copyright 2014 The Android Open Source Project, Inc.
+Copyright 2017 The Android Open Source Project, Inc.
 
 Licensed to the Apache Software Foundation (ASF) under one or more contributor
 license agreements.  See the NOTICE file distributed with this work for
